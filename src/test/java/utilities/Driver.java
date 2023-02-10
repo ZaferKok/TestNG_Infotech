@@ -29,7 +29,7 @@ public class Driver {
                 default:
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("start-maximized");
-                    //WebDriverManager.chromedriver().setup(); // bonogarcia dependency bunun için gerekli
+                    WebDriverManager.chromedriver().setup(); // bonogarcia dependency bunun için gerekli
                     driver = new ChromeDriver(chromeOptions);
                     System.out.println("CHROME WORKS!!!");
                     break;
@@ -76,7 +76,7 @@ public class Driver {
             }
         }
         //driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         return driver;
     }
@@ -86,5 +86,11 @@ public class Driver {
             driver.quit();
             driver = null;
         }
+    }
+
+    public static void wait(int second) throws InterruptedException {
+
+        Thread.sleep(second*1000);
+
     }
 }

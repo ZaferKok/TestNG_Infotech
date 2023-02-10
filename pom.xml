@@ -44,6 +44,7 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <!-- Aşağıdaki 3 dependecy API testlerinde kullanmak için gereklidir-->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -60,26 +61,31 @@
             <artifactId>jackson-datatype-jdk8</artifactId>
             <version>2.13.4</version>
         </dependency>
+        <!-- Aşağıdaki dependecy database bağlantısı ve testleri için gereklidir-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.5.0</version>
         </dependency>
+        <!-- Aşağıdaki dependecy Exel dosyalarından data almak veya data göndermek için gereklidir-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.2</version>
         </dependency>
+        <!-- Aşağıdaki dependecy cucumber framework ten rapor almak içindir-->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>5.0.9</version>
         </dependency>
+        <!-- Aşağıdaki dependecy cucumber framework ten rapor almak içindir-->
         <dependency>
             <groupId>tech.grasshopper</groupId>
             <artifactId>extentreports-cucumber7-adapter</artifactId>
             <version>1.7.0</version>
         </dependency>
+        <!-- Aşağıdaki dependecy Klass içindeki setter getter toString ... metodlarını otomatik oluşturur ama ekranda görünmez-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

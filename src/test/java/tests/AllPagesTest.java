@@ -4,27 +4,40 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-import pages.TableTestPage;
+import utilities.AllPages;
 import utilities.Driver;
 import utilities.TestBase;
 
 import java.util.List;
 
-public class WebTables extends TestBase {
+public class AllPagesTest extends TestBase {
 
-    TableTestPage tableTestPage = new TableTestPage();
+    AllPages allPages = new AllPages();
 
     @Test
-    public void tableTest() {
+    public void dragAndDrop() throws InterruptedException {
+
+        Driver.getDriver().get("https://demo.guru99.com/test/drag_drop.html");
+        Driver.getDriver().switchTo().frame("gdpr-consent-notice");
+        allPages.dragAndDropPage.acceptAllCookiesButton.click();
+
+        Driver.wait(2);
+
+        actions.dragAndDrop(allPages.dragAndDropPage.sourceValue5000plus, allPages.dragAndDropPage.targetInDepitAmountRight).build().perform();
+
+        Driver.wait(2);
+
+        String expectedValue = "5000";
+        String actualValue = allPages.dragAndDropPage.savedValueInTableDebitSide.getText();
+        Assert.assertEquals(actualValue, expectedValue);
 
         Driver.getDriver().get("https://the-internet.herokuapp.com/tables");
-        String tableTitle = tableTestPage.table.getText();
+        String tableTitle = allPages.tableTestPage.table.getText();
         System.out.println("tableTitle = " + tableTitle);
 
         System.out.println("=======================================================================");
 
-        String tableFirstRowSecondData = tableTestPage.tr.getText();
+        String tableFirstRowSecondData = allPages.tableTestPage.tr.getText();
         System.out.println("tableFirstRowSecondData = " + tableFirstRowSecondData);
 
         List<WebElement> satir3 = Driver.getDriver().findElements(By.xpath("//table//tbody//tr"));
@@ -41,5 +54,4 @@ public class WebTables extends TestBase {
         WebElement dataEmail3 = Driver.getDriver().findElement(By.xpath(reUsableMethods.findLocationOfElementInSpecificTableCell(2,4,5)));
         System.out.println("dataEmail3 = " + dataEmail3);
     }
-
 }

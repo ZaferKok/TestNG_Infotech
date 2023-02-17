@@ -1,6 +1,8 @@
 package utilities;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.All;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -9,6 +11,8 @@ import java.time.Duration;
 public class TestBase {
 
     protected Actions actions = new Actions(Driver.getDriver());
+    protected WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    public ReUsableMethods reUsableMethods = new ReUsableMethods();
 
     @BeforeMethod
     public void setup(){
@@ -19,6 +23,6 @@ public class TestBase {
     }
     @AfterMethod
     public void tearDown(){
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }

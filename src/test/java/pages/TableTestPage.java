@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class TableTestPage {
+
     public TableTestPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }

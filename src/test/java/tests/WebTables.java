@@ -41,5 +41,26 @@ public class WebTables extends TestBase {
         WebElement dataEmail3 = Driver.getDriver().findElement(By.xpath(reUsableMethods.findLocationOfElementInSpecificTableCell(2,4,5)));
         System.out.println("dataEmail3 = " + dataEmail3);
     }
+    @Test
+    public void tableTest_2() {
 
+        Driver.getDriver().get("https://the-internet.herokuapp.com/tables");
+        WebElement dataEmail1 = Driver.getDriver().findElement(By.xpath(reUsableMethods.findLocationOfElementInSpecificTableCell(2,4)));
+        System.out.println("dataEmail1 = " + dataEmail1);
+    }
+
+    @Test
+    public void tableTest_3() {
+
+        Driver.getDriver().get("https://the-internet.herokuapp.com/tables");
+        WebElement dataEmail2 = Driver.getDriver().findElement(By.xpath(reUsableMethods.findLocationOfElementInSpecificTableCell(2,3,4)));
+        System.out.println("dataEmail2 = " + dataEmail2);
+    }
+    @Test
+    public void tableTest_4() {
+
+        Driver.getDriver().get("https://the-internet.herokuapp.com/tables");
+        WebElement dataEmail3 = Driver.getDriver().findElement(By.xpath(reUsableMethods.findLocationOfElementInSpecificTableCell(2,4,5)));
+        System.out.println("dataEmail3 = " + dataEmail3);
+    }
 }
